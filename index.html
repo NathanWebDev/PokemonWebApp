@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeDex</title>
 </head>
     <body>
         <header>
-            <h1>Who's that Poke'mon!?</h1>
+            <h1>Who's that Pokèmon!?</h1>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for Pokemon by Name or id">
+                    <button type="submit">Search</button>
+                </form>
         </header>
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Search for Pokemon by Name or id" style="width: 210px;">
-                <button type="submit">Search</button>
-            </form>
-            <p id="error"></p>
+            <p id="error" class="show"></p>
             <div id="result">
             </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+            <p id="home-text">Use the Search Bar above to start finding Poke'mon by Name and Id</Id>.</p>
+            <div id="video-results">
+            </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
         <script src="app.js"></script>
     </body>
 </html>
