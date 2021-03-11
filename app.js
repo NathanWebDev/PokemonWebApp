@@ -4,6 +4,9 @@ const youtubeAPI = 'https://www.googleapis.com/youtube/v3/search';
 const youtubeAPIKey = 'AIzaSyBfRcnz-01qbwN6mMpDtOd68L3eEdo1RCQ';
 
 
+/* Function that finds the Type of Pokèmon and
+  assigns a hex value for said type to be used as
+  a background color for the card.*/
 function colorFinder(responseJson){
     var colorType = ''
     switch(responseJson.types[0].type.name){
@@ -66,6 +69,7 @@ function colorFinder(responseJson){
 }
 
 
+/* Function that pulls videos based on what card was searched for in the getCards Function. */
 function getYouTubeVideos(responseJson, youtubeAPIKey) {
     const videosURL = youtubeAPI + `?part=snippet&key=${youtubeAPIKey}&q=${responseJson.name}%20Pokemon%20Videos`;
   
@@ -86,6 +90,7 @@ function getYouTubeVideos(responseJson, youtubeAPIKey) {
       console.log(videosURL);
     }
 
+/* Function that finds the Pokèmon that the user searched for. */
 function getCards(searchTerm) {
     console.log('getCards ran');
     searchURL = pokemonURL + searchTerm;
@@ -107,6 +112,7 @@ function getCards(searchTerm) {
 };
 
 
+/* Function that displays the Data from the Pokèmon API in card format. */
 function displayCards(responseJson){
     var colorType = colorFinder(responseJson);
     console.log(colorType);
@@ -128,6 +134,7 @@ function displayCards(responseJson){
     getYouTubeVideos(responseJson, youtubeAPIKey);
 };
 
+/* Function that displays videos based on the Data from the Pokèmon API. */
 function displayVideos(responseJson2){
     $('#video-results').empty();
     console.log(responseJson2);
@@ -143,6 +150,7 @@ function displayVideos(responseJson2){
         )};
 };
 
+/* WatchForm Function */
 function searchBarWatchForm(){
     $('#search-form').submit(event => {
         event.preventDefault();
