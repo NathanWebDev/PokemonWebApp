@@ -75,7 +75,10 @@ header > h1 {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 50px;
   text-align: center;
-  margin-top: 500px;
+  top: 40%;
+  margin-left: 15%;
+  margin-right: 15%;
+  position: absolute;
 }
 
 /* Class to Hide Error Message */
